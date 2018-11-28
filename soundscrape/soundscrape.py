@@ -9,7 +9,6 @@ import requests
 import soundcloud
 import sys
 import urllib
-import glob
 
 from clint.textui import colored, puts, progress
 from datetime import datetime
