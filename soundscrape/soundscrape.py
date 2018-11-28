@@ -9,6 +9,7 @@ import requests
 import soundcloud
 import sys
 import urllib
+import glob
 
 from clint.textui import colored, puts, progress
 from datetime import datetime
@@ -428,7 +429,7 @@ def download_tracks(client, tracks, num_tracks=sys.maxsize, downloadable=False, 
                 else:
                     track_filename = join(custom_path, track_filename)
 
-                if exists(track_filename):
+                if exists(track_filename) or exists(track_filename[:-3] + 'wav'):
                     puts_safe(colored.yellow("Track already downloaded: ") + colored.white(track_title))
                     continue
 
